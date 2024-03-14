@@ -1,0 +1,16 @@
+.Filter{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    width: 15%  ;
+    justify-content: space-evenly;
+}
+
+.Filter select{
+    height: 2rem;
+}
+
+.Filter h3{
+    font-size: 1.5rem;
+    margin: 0;
+}

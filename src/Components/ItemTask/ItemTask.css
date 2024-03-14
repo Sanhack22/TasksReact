@@ -1,0 +1,22 @@
+.name{
+    font-weight: 700;
+    width: 20%;
+    display: flex;
+}
+li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    list-style:none ;
+}
+
+.spanCircle{
+    background-color: brown;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    
+}
+
+.description{
+}

@@ -1,0 +1,11 @@
+.divInput{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+
+}
+input{
+    height: 1.3rem;
+    margin-left:1rem ;
+}
