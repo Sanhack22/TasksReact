@@ -5,9 +5,14 @@
 }
 li{
     display: flex;
+    padding: 0 0.5rem;
     width: 100%;
     justify-content: space-between;
     list-style:none ;
+    height: 2rem;
+    align-items: center;
+    border: 2px solid rgb(255, 246, 246);
+    border-radius: 1rem;
 }
 
 .spanCircle{
@@ -19,4 +24,5 @@ li{
 }
 
 .description{
+    font-weight: 400;
 }
