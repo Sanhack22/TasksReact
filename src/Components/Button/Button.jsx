@@ -3,6 +3,6 @@ import './Button.css'
 
 export const Button = (props) => {
   return (
-    <button className="send" id={props.id}>{props.text}</button>
+    <button onClick={props.onClick} className="send" id={props.id}>{props.text}</button>
   )
 }

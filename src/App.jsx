@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -12,6 +12,9 @@ import { Filter } from './Components/Filter/Filter'
 import { Tasks } from './Components/Tasks/Tasks'
 import { Footer } from './Components/Layouts/Footer/Footer'
 import { ItemTask } from './Components/ItemTask/ItemTask'
+import { taskContext } from './Components/Context/Context'
+
+
 
 
 
@@ -19,7 +22,23 @@ import { ItemTask } from './Components/ItemTask/ItemTask'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const otherContext = useContext(taskContext);
+
+  const changeStatus = (id) =>{
+
+    otherContext.tasks.find(x =>{
+      
+      if(x.id==id)
+
+      x.status=true
+      console.log(x);
+    })
+    
+
+    }
+
+  
+
 
   return (
     <>
@@ -34,7 +53,12 @@ function App() {
           <hr />
       <Filter/>
       <Tasks>
-        <ItemTask name="Lavar" description="La Ropa De AD"></ItemTask>
+
+        {
+          otherContext.tasks.map( (task,index) =>(
+             <ItemTask onClick={changeStatus(task.id)} key={task.name+index} name={task.name} description={task.description} />
+          ))
+        }
       </Tasks>
       
       </Main>

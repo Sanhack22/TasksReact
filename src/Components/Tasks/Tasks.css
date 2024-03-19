@@ -6,4 +6,5 @@
     border-radius: 1rem;
     height: 20rem;
     padding: 4rem;
+    flex-direction: column;
 }
