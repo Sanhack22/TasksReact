@@ -22,7 +22,10 @@ li{
     border-radius: 50%;
     
 }
+.greenCircle{
+    background-color: green;
 
+}
 .description{
     font-weight: 400;
 }

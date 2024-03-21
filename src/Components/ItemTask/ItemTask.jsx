@@ -1,11 +1,11 @@
 import React from 'react'
 import './ItemTask.css'
-export const ItemTask = ({name,description,onClick}) => {
+export const ItemTask = ({name,description,onChange,checked}) => {
   return (
     <li>
-        <span className='spanCircle'></span>
+        <span className={checked ? 'spanCircle greenCircle' : 'spanCircle'}></span>
         <p className='name'>{name} <span className='description'>:{description}</span></p>
-        <input type="checkbox" onChange={} onClick={onClick}/>
+        <input type="checkbox"  onChange={onChange}/>
     </li>
   )
 }
