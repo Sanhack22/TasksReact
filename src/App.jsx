@@ -24,18 +24,7 @@ import { taskContext } from './Components/Context/Context'
 function App() {
   const otherContext = useContext(taskContext);
 
-  const CheckboxChange = (event, id) => {
-    const { checked } = event.target;
-    otherContext.setTasks(prevTasks => {
-      return prevTasks.map(task => {
-        if (task.id === id) {
-          return { ...task, status: checked };
-        }
-        return task;
-      });
-    });
-    console.log(otherContext.tasks);
-  };
+ 
 
   
 
@@ -49,18 +38,11 @@ function App() {
       </Header>
       <Main>
           <Form/>
-          <TitleInformation text={`Usted Tiene ${otherContext.countOK} tareas completadas y ${otherContext.countFALSE} tareas pendientes`}/>
+          <TitleInformation text={`Usted Tiene ${otherContext.countOkLength} tareas completadas y ${otherContext.countFALSELength} tareas pendientes`}/>
           <hr />
       <Filter />
-      <Tasks>
-        {
-          otherContext.tasks.map( (task,index) =>(
-             <ItemTask onChange={(event) => CheckboxChange(event, task.id)} checked={task.status} key={task.name + index} name={task.name} description={task.description} />
-          ))
-          
-        }
-        
-      </Tasks>
+      <Tasks/>          
+      
       </Main>
       <Footer>
         <Title title="Santiago Peña" />
