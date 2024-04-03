@@ -16,7 +16,6 @@ export const Tasks = () => {
         return task;
       });
     });
-    console.log(createTaskContext.tasks);
   };
 
   function renderTasks(tasks) {

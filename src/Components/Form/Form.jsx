@@ -22,7 +22,7 @@ export const Form = () => {
     }
     context.setCount(context.count+1)
     context.setTasks([...context.tasks, newTask])
-    console.log(context.tasks);
+
     
     
     

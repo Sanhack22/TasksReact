@@ -1,7 +1,4 @@
 footer{
     background-color: blueviolet;
-    display: flex;
-    height: 10vh;
     width: 100%;
-    justify-content: center;
 }

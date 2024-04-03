@@ -1,4 +1,4 @@
-import { createContext,useState } from "react";
+import { createContext,useState,useEffect } from "react";
 export const taskContext = createContext();
 
 
@@ -10,13 +10,12 @@ export const TaskProvider =({children}) =>{
     const countFALSE = tasks.filter(task => task.status === false);
     const countOkLength=countOK.length;
     const countFALSELength=countFALSE.length;
-    const [valueFilter, setValueFilter] = useState('');
+    const [valueFilter, setValueFilter] = useState('AllTask');
 
     function filterTask(valu) {
         setValueFilter(valu);
     }
     
-      
 
     return(
        <taskContext.Provider value={{tasks,setTasks,count,setCount,countFALSE,countOK,countOkLength,countFALSELength,filterTask,valueFilter}}>
