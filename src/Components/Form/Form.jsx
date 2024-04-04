@@ -10,8 +10,21 @@ export const Form = () => {
   const nameTask = useRef('')
   const descriptionTask = useRef('')
 
-  const SetTaskss = (event) => {
+  const cleanInput=()=>{
+    nameTask.current.value=''
+    descriptionTask.current.value=''
+  }
+  const ConfirmValue=(event)=>{
     event.preventDefault()
+
+    if (nameTask.current.value===""||descriptionTask.current.value==="") {
+        return alert("Porfavor Agregue Todos Los Campos")
+    }
+    SetTaskss()
+    cleanInput()
+  }
+
+  const SetTaskss = () => {
     
     let newTask = {
       id: context.count,
@@ -23,6 +36,8 @@ export const Form = () => {
     context.setCount(context.count+1)
     context.setTasks([...context.tasks, newTask])
 
+    alert("Se agregó la tarea Exitosamente")
+
     
     
     
@@ -31,10 +46,10 @@ export const Form = () => {
   return (
     <form action="">
       <label htmlFor="">Titulo Tarea:</label>
-      <input ref={nameTask} type="text" />
+      <input ref={nameTask} type="text"  />
       <label htmlFor="">Descripcion</label>
-      <input ref={descriptionTask} type="text" />
-        <Button  text="Enviar" onClick={SetTaskss}/>
+      <input ref={descriptionTask} type="text"  />
+        <Button  text="Enviar" onClick={ConfirmValue}/>
     </form>
     
 

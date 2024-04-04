@@ -7,7 +7,9 @@ export const Tasks = () => {
   const createTaskContext = useContext(taskContext)
 
   const CheckboxChange = (event, id) => {
-    const { checked } = event.target;
+    const resp = prompt("Desea cambiar el estado de la Tarea?\nSI para ACEPTAR")
+    if (resp=="si" || resp =="SI" || resp == "sI") {
+      const { checked } = event.target;
     createTaskContext.setTasks(prevTasks => {
       return prevTasks.map(task => {
         if (task.id === id) {
@@ -16,6 +18,10 @@ export const Tasks = () => {
         return task;
       });
     });
+    }else{
+      alert("De Acuerdo");
+    }
+    
   };
 
   function renderTasks(tasks) {
